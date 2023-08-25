@@ -5,7 +5,7 @@ function getWeather() {
     if (!cityName) return;
 
     // Get current weather
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${7be62da2b91436232540923615dc9e7d}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`)
     .then(response => response.json())
     .then(data => {
         document.getElementById('currentWeather').innerHTML = `
@@ -20,7 +20,7 @@ function getWeather() {
     });
 
     // Get 5-day forecast
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${7be62da2b91436232540923615dc9e7d}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${API_KEY}`)
     .then(response => response.json())
     .then(data => {
         let forecastHTML = '<h2>5-Day Forecast</h2>';
